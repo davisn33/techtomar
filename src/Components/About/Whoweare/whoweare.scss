@@ -1,0 +1,32 @@
+.head1 {
+    font-size: 14px;
+    font-weight:800;
+    background: linear-gradient(90deg, rgba(28,174,149,1) 20%, rgba(171,209,95,1) 60%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.head2 {
+    font-size: 30px;
+    font-weight:700;
+    text-align: left;
+    color: #00254F;
+}
+.head3 {
+    font-size: 14px;
+    line-height: 1.5;
+    color:grey;
+    text-align:left;
+    margin-top: 20px;
+}
+
+.learnmore {
+    color: white;
+    font-weight: 700;
+    background:linear-gradient(90deg, rgba(28,174,149,1) , rgba(171,209,95,1));;
+    padding:12px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor:pointer;
+}

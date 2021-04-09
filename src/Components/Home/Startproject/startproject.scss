@@ -1,0 +1,46 @@
+.start-your-project-container{
+    background: linear-gradient(45deg,#20AF93,#AAD35E); 
+    min-height: 50vh; 
+    color: white;
+    text-align: center;
+    padding-top:40px;
+    padding-bottom:40px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.start-your-project-container h1{
+    margin: 0;
+    font-size: 40px;
+    @media only screen and (max-width: 600px) {
+        font-size: 30px;
+        width:250px;
+      }
+}
+
+.start-your-project-quote{
+    width: 620px;
+    display: flex;
+    margin: auto;
+    font-size: 20px;
+    @media only screen and (max-width: 600px) {
+        font-size: 15px;
+        width: 200px;
+      }
+}
+
+.start-your-project-container button{
+    color: white;
+    background: black;
+    outline: none;
+    border-color: black;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 20px;
+    @media only screen and (max-width: 600px) {
+        font-size: 10px;
+      }
+}

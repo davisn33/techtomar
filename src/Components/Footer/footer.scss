@@ -1,0 +1,39 @@
+.footer-container{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.footer-logo-quote {
+    display: flex;
+    flex-direction: column;
+}
+.footer-logo-quote > div{
+    width: 250px;
+}
+
+.footer-follow > div img{
+    width:30px;
+}
+
+.footer-title{
+    color: white;
+    font-weight: bold;
+}
+
+.text{
+    color: gray;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+}
+
+.copy-right{
+    background-color: black;
+    text-align: center;
+}
+
+.copy-right span{
+    color: white;
+}
