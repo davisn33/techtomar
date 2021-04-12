@@ -11,7 +11,7 @@ import { Grid } from "@material-ui/core";
 
 const Services = () => {
     return (
-        <div style={{ background: '#80808029' }}>
+        <div style={{ background: '#80808029',paddingBottom:40 }}>
             <div className="services-container">
                 <h2>IT Services</h2>
                 <p>Map a strategy, build a solution or elevate your product experience with foucsed engagements available as standalone offerings or as part of your project's service stack.</p>

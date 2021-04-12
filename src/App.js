@@ -11,6 +11,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import ServicesPage from "./Screens/Services";
+import Cookies from "./Screens/Cookies";
 
 function App() {
   return (
@@ -18,15 +20,20 @@ function App() {
       <Router>
       <Header />
       <Switch>
-          
           <Route path="/about">
             <About />
           </Route>
           <Route path="/privacy">
             <Privacy />
           </Route>
+          <Route path="/services">
+            <ServicesPage/>
+          </Route>
           <Route path="/product">
             <Products/>
+          </Route>
+          <Route path="/cookies">
+            <Cookies/>
           </Route>
           <Route path="/">
             <Home/>
