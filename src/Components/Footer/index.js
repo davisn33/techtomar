@@ -16,7 +16,7 @@ const Footer = () => {
                 <div style={{width:"70%"}}>
                     <Grid container className="footer-container">
                         <Grid item className="footer-logo-quote text">
-                            <img src={footerLogo} alt="flogo" style={{ width: 100 }}></img>
+                            <img src={footerLogo} alt="flogo" style={{ width: 100,marginTop:20 }}></img>
                             <div>
                                 <p style={{ width: 200 }}>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
                             </div>

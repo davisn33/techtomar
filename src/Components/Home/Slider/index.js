@@ -7,7 +7,7 @@ import slider1 from "../../../Assets/slider1.png"
 import "./slider.scss"
 import { makeStyles } from '@material-ui/core/styles';
 import {withWidth} from "@material-ui/core"
-
+import {getSlider} from "../../../Services/api"
 
 const useStyles = makeStyles((theme) => ({
     content: {
@@ -44,7 +44,14 @@ let images = [
 const Slider = ({width}) => {
     const classes = useStyles();
     const [activeItemIndex, setActiveItemIndex] = useState(0);
+    const [images,setImages]=useState([]);
     const chevronWidth = width==='xs'?50:500;
+    React.useEffect(()=>{
+        getSlider()
+        .then(res=>{
+            setImages(res.data.image);
+        })
+    },[])
     return (
         <div className="root">
             <ItemsCarousel
@@ -58,7 +65,7 @@ const Slider = ({width}) => {
             >
                 {images.map((item) => {
                     return (
-                        <div className={classes.item} style={{ backgroundImage:`url(${item.src})` }}>
+                        <div className={classes.item} style={{ backgroundImage:`url(${item.url})` }}>
                             <div className={classes.content}>
                                 <div style={{width:width==='xs'?200:500,textAlign:"left"}}>
                                 <h1 style={{fontSize:width==='xs'?20:40,lineHeight:1.5}}>Digitally Transform Business Using</h1>
