@@ -5,11 +5,15 @@ const Privacynotice = () => {
     const [heading,setHeading] = React.useState("");
     const [content,setContent] = React.useState("");
     React.useEffect(()=>{
-        getPolicy()
+        let lang=localStorage.getItem("lang");
+        console.log(lang)
+        getPolicy(lang)
         .then(res=>{
-            setHeading(res.data.cookies.eng_title);
-            setContent(res.data.cookies.eng_description);
+            console.log(res.data)
+            setHeading(res.data.data.title);
+            setContent(res.data.data.description);
         })
+        .catch((e)=>console.log(e))
     },[])
     return (
         <div style={{display: 'flex',justifyContent: 'center'}}>

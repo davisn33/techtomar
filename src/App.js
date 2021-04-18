@@ -13,8 +13,13 @@ import {
 } from "react-router-dom";
 import ServicesPage from "./Screens/Services";
 import Cookies from "./Screens/Cookies";
+import React from "react"
 
 function App() {
+  React.useEffect(()=>{
+    if(!localStorage.getItem("lang"))
+      localStorage.setItem("lang","en")
+  },[])
   return (
     <div className="App">
       <Router>

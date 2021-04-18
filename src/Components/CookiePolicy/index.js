@@ -5,11 +5,13 @@ const CookiePolicy = () => {
     const [heading,setHeading] = React.useState("");
     const [content,setContent] = React.useState("");
     React.useEffect(()=>{
-        getCookies()
+        let lang=localStorage.getItem("lang");
+        getCookies(lang)
         .then(res=>{
-            setHeading(res.data.cookies.eng_title);
-            setContent(res.data.cookies.eng_description);
+            setHeading(res.data.data.title);
+            setContent(res.data.data.description);
         })
+        .catch((e)=>console.log(e))
     },[])
     return (
         <div style={{display: 'flex',justifyContent: 'center'}}>

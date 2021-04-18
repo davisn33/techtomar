@@ -2,7 +2,7 @@ import React from "react";
 import "./header.scss";
 import logo from "../../Assets/logo.png";
 import MenuIcon from '@material-ui/icons/Menu';
-import { Hidden, List, ListItem, Box,ListItemText,makeStyles,ListItemIcon,SwipeableDrawer ,Button } from "@material-ui/core";
+import { Hidden, List, ListItem, Box,ListItemText,makeStyles,ListItemIcon,SwipeableDrawer ,Menu,MenuItem } from "@material-ui/core";
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import {Link} from "react-router-dom";
@@ -19,13 +19,36 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const [open,setOpen]=React.useState(false);
-  
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [lang,setLang]=React.useState("English");
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (l) => {
+    setAnchorEl(null);
+    setLang(l);
+    localStorage.setItem("lang",l==="English"?"en":"de");
+    window.location.reload(false);
+  };
   return (
     <div className="first">
       <div className="root">
         <div className="lang">
-          <div>English 🢓</div>
+          <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>{lang} 🢓</div>
+          
         </div>
+        <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={()=>handleClose("English")}>English</MenuItem>
+            <MenuItem onClick={()=>handleClose("German")}>German</MenuItem>
+          </Menu>
         <Hidden mdDown>
           <div className="main">
             <div className="header">
