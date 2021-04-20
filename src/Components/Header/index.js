@@ -17,10 +17,19 @@ const useStyles = makeStyles({
 });
 
 
+
 const Header = () => {
   const [open,setOpen]=React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [lang,setLang]=React.useState("English");
+
+  React.useEffect(()=>{
+    let lang=localStorage.getItem("lang")
+    if(lang){
+      setLang(lang=='en'?"English":"German")
+    }
+  },[])
+  
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
