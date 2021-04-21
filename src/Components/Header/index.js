@@ -38,7 +38,7 @@ const Header = () => {
     }
     else{
       setOpen1(true)
-      setLang("en")
+      setLang("English")
     }
   },[])
   

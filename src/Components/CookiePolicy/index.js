@@ -8,8 +8,8 @@ const CookiePolicy = () => {
         let lang=localStorage.getItem("lang");
         getCookies(lang)
         .then(res=>{
-            // setHeading(res.data.data.title);
-            // setContent(res.data.data.description);
+            setHeading(res.data.data.title);
+            setContent(res.data.data.description);
             console.log(res.data)
         })
         .catch((e)=>console.log(e))
