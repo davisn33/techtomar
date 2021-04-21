@@ -25,3 +25,9 @@ export function getProducts(lang){
     form.append("lang",lang);
     return axios.post("/product");
 }
+
+export function getAbout(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    return axios.post("/about-us");
+}
