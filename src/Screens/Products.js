@@ -8,7 +8,6 @@ const Products = () => {
         <div>
             <Banner text="Products" img=""/>
             <Food/>
-            <Indiagermany/>
         </div>
     )
 }

@@ -20,6 +20,8 @@ export function getSlider(){
     return axios.get("user/getsliders");
 }
 
-export function getProducts(){
-    return axios.get("user/getproducts");
+export function getProducts(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    return axios.post("/product");
 }
