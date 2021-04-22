@@ -64,6 +64,7 @@ const ContactMain = ({width}) => {
                 <Grid item xs={12} md={4} style={{padding:20}} >
                     <CssTextField label="Full Name Here" 
                     variant="outlined"
+                    fullWidth
                     InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -76,6 +77,7 @@ const ContactMain = ({width}) => {
                 <Grid item xs={12} md={4} style={{padding:20}} >
                     <CssTextField label="Email Here" 
                     variant="outlined"
+                    fullWidth
                     InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -88,6 +90,7 @@ const ContactMain = ({width}) => {
                 <Grid item xs={12} md={4} style={{padding:20}} >
                     <CssTextField label="Subject" 
                     variant="outlined"
+                    fullWidth
                     InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
