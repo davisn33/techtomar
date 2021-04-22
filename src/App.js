@@ -15,6 +15,7 @@ import ServicesPage from "./Screens/Services";
 import Cookies from "./Screens/Cookies";
 import React from "react"
 import ServiceDetail from "./Screens/ServiceDetail";
+import Contact from "./Screens/Contact";
 
 function App() {
   React.useEffect(()=>{
@@ -28,6 +29,9 @@ function App() {
       <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/contact">
+            <Contact/>
           </Route>
           <Route path="/service">
             <ServiceDetail/>
