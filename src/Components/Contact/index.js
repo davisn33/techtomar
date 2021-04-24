@@ -1,12 +1,31 @@
-import { Grid, TextField,InputAdornment,withStyles,Button,withWidth } from '@material-ui/core'
+import { Grid, TextField,InputAdornment,withStyles,Button,withWidth, Divider } from '@material-ui/core'
 import React from 'react'
 import mail from '../../Assets/mail.png'
+import call from '../../Assets/call.png'
+import location from '../../Assets/location.png'
 import user from '../../Assets/user.png'
 import mailicon from '../../Assets/mailicon.png'
 import down from '../../Assets/down.png'
 import edit from '../../Assets/edit.png'
 import GoogleMapReact from 'google-map-react';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
 import "./contact.scss"
+
+
+const values=[
+{
+  image:mail,
+  text:"Mail Here"
+},
+{
+  image:call,
+  text:"Call Us Now"
+},
+{
+  image:location,
+  text:"Visit Here"
+},
+]
 
 const CssTextField = withStyles({
   root: {
@@ -46,18 +65,74 @@ const defaultProps = {
   };
 
 const ContactMain = ({width}) => {
+    const [select,setSelect] = React.useState(0);
     return (
         <div className="contact" style={{display:"flex",flexDirection:"column", alignItems:"center"}}>
             <Grid container style={{width:width==='xs'?"100%":"70%",padding:20}}>
-                {[1,1,1].map(()=>
+
+
+
+              <Grid item md={12} xs={12} onClick={()=>select!==1?setSelect(1):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
+                <Divider/>
+                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Invester Contacts</div>
+              </Grid>
+                {select===1&&values.map((item)=>
                 <Grid item xs={12} md={4} style={{padding:20}} >
                     <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
-                        <img src={mail} style={{width:70}}></img>
-                        <h4>Mail Here</h4>
+                        <img src={item.image} style={{width:70}}></img>
+                        <h4>{item.text}</h4>
                         <div style={{color:"#555"}}>support@gmail.com</div>
                         <div style={{color:"#555"}}>www.techtomar.com</div>
                     </div>
                 </Grid>)}
+
+
+                <Grid item md={12} xs={12} onClick={()=>select!==2?setSelect(2):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
+                <Divider/>
+                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Media Contacts</div>
+              </Grid>
+                {select===2&&values.map((item)=>
+                <Grid item xs={12} md={4} style={{padding:20}} >
+                    <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
+                        <img src={item.image} style={{width:70}}></img>
+                        <h4>{item.text}</h4>
+                        <div style={{color:"#555"}}>support@gmail.com</div>
+                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                    </div>
+                </Grid>)}
+
+
+                <Grid item md={12} xs={12} onClick={()=>select!==3?setSelect(3):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
+                <Divider/>
+                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Indian Office Contacts</div>
+              </Grid>
+                {select===3&&values.map((item)=>
+                <Grid item xs={12} md={4} style={{padding:20}} >
+                    <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
+                        <img src={item.image} style={{width:70}}></img>
+                        <h4>{item.text}</h4>
+                        <div style={{color:"#555"}}>support@gmail.com</div>
+                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                    </div>
+                </Grid>)}
+
+
+                <Grid item md={12} xs={12} onClick={()=>select!==4?setSelect(4):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
+                <Divider/>
+                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>German Office Contacts</div>
+              </Grid>
+                {select===4&&values.map((item)=>
+                <Grid item xs={12} md={4} style={{padding:20}} >
+                    <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
+                        <img src={item.image} style={{width:70}}></img>
+                        <h4>{item.text}</h4>
+                        <div style={{color:"#555"}}>support@gmail.com</div>
+                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                    </div>
+                </Grid>)}
+                <Grid xs={12} md={12} style={{display:"flex",flexDirection:"column"}}><Divider/></Grid>
+
+
                 <Grid item xs={12} md={12}>
                 <h2 className="heading">Don't Hesitate To Contact Us</h2>
                 </Grid>
