@@ -54,7 +54,7 @@ const Header = () => {
     window.location.reload(false);
   };
   return (
-    <div className="first">
+    <div className="first" >
       <div className="root">
         <div className="lang">
           <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>{lang} 🢓</div>
@@ -109,11 +109,12 @@ const Header = () => {
           </SwipeableDrawer>
         </Hidden>
       </div>
-      <Dialog
+      {/* <Dialog
         open={open1}
         onClose={()=>{}}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        style={{width:"80%"}}
       >
         <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
         <DialogContent>
@@ -133,7 +134,7 @@ const Header = () => {
           Agree
         </ColorButton>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </div>
   );
   

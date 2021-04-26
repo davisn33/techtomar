@@ -16,18 +16,22 @@ export function getPolicy(lang){
     return axios.post("page",form);
 }
 
-export function getSlider(){
-    return axios.get("user/getsliders");
-}
 
 export function getProducts(lang){
     let form =new FormData();
     form.append("lang",lang);
-    return axios.post("/product");
+    return axios.post("/product",form);
 }
 
 export function getAbout(lang){
     let form =new FormData();
     form.append("lang",lang);
-    return axios.post("/about-us");
+    return axios.post("/about-us",form);
+}
+
+export function getHome(lang){
+    console.log(lang)
+    let form =new FormData();
+    form.append("lang",lang);
+    return axios.post("/home",form);
 }
