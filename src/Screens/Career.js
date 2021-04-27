@@ -6,6 +6,10 @@ import {getCareerList} from '../Services/api'
 const Career = () => {
     const [careerlist,setCareerlist] = React.useState([])
     React.useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
         let lang = localStorage.getItem('lang')
         getCareerList(lang?lang:"en")
             .then((res)=>{

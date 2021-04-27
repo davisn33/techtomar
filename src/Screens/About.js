@@ -14,6 +14,10 @@ const About = () => {
         const [whychooseus,setWhychooseus] = React.useState(null);
         const [team,setTeam] = React.useState(null);
         React.useEffect(()=>{
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+              })
             let lang = localStorage.getItem("lang");
             getAbout(lang?lang:"en")
             .then((res)=>{

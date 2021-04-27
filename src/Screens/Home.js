@@ -13,6 +13,10 @@ const Home = () => {
     const [sliders,setSliders] = React.useState([]);
     const [reviews,setReviews] = React.useState([])
     React.useEffect(()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
         let lang = localStorage.getItem("lang");
             getHome(lang?lang:"en")
             .then((res)=>{
