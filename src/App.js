@@ -17,6 +17,7 @@ import React from "react"
 import ServiceDetail from "./Screens/ServiceDetail";
 import Contact from "./Screens/Contact";
 import Career from "./Screens/Career";
+import CareerDetail from "./Screens/CareerDetail";
 
 function App() {
   React.useEffect(()=>{
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path="/services">
             <ServicesPage/>
+          </Route>
+          <Route path="/careerdetail">
+            <CareerDetail/>
           </Route>
           <Route path="/career">
             <Career/>

@@ -1,4 +1,4 @@
-import { Grid,Button,withStyles } from '@material-ui/core'
+import { Grid,Button,withStyles,withWidth} from '@material-ui/core'
 import React from 'react'
 
 
@@ -12,19 +12,22 @@ const CssButton = withStyles({
     },
   })(Button);
 
-const CareerMain = () => {
+const CareerMain = ({width,careerlist}) => {
+    
     return (
         <div style={{display:"flex",justifyContent:"center",background:"#F4F8FD"}}>
-            <Grid container style={{width:"80%"}}>
-                {[1,1,1,1].map(()=>
+            <Grid container style={{width:width==='xs'?"95%":"80%"}}>
+                {careerlist.map((item)=>
                 <Grid item md={6} style={{padding:20}}>
                     <div style={{background:"white",borderRadius:5,display:"flex",padding:30,flexDirection:"column",alignItems:"flex-start"}}>
-                        <h2 style={{color:"#333232"}}>Web Designer</h2>
-                        <div>
-                            <div>Type:<span style={{color:"#444"}}> Part-time</span> Other:<span style={{color:"#444"}}> Something</span> </div>
+                        <h2 style={{color:"#333232"}}>{item.name}</h2>
+                        <div style={{fontWeight:"bold",display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
+                            <div>Type:<span style={{color:"#444",fontWeight:"normal"}}> {item.work_status}</span> Exp:<span style={{color:"#444",fontWeight:"normal"}}> {item.exp}</span> </div>
+                        
+                            <div>Vacancy:<span style={{color:"#444",fontWeight:"normal"}}> {item.vacancy}</span> </div>
                         </div>
                         <div style={{marginTop:20,textAlign:"left",fontSize:13,paddingRight:20,color:"#555"}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        {item.description}
                         </div>
                         <CssButton variant="contained" style={{width:170,height:45,marginTop:20}}><div style={{fontSize:12,fontWeight:'bolder'}}>Read More ➔</div></CssButton>
                     </div>
@@ -35,4 +38,4 @@ const CareerMain = () => {
     )
 }
 
-export default CareerMain
+export default withWidth()(CareerMain)

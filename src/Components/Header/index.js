@@ -30,16 +30,29 @@ const Header = () => {
   const [open1,setOpen1]=React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [lang,setLang]=React.useState("English");
+  const [pos,setPos]=React.useState(0);
 
   React.useEffect(()=>{
-    let lang=localStorage.getItem("lang")
-    if(lang){
-      setLang(lang=='en'?"English":"German")
+
+    document.addEventListener("scroll", e => {
+      let scrolled = document.scrollingElement.scrollTop;
+      if (scrolled >= 50) {
+        setPos(1)
+      } else {
+        setPos(0)
+      }
+    })
+
+
+    let lang = localStorage.getItem("lang")
+    if (lang) {
+      setLang(lang == 'en' ? "English" : "German")
     }
-    else{
+    else {
       setOpen1(true)
       setLang("English")
     }
+
   },[])
   
 
@@ -54,10 +67,10 @@ const Header = () => {
     window.location.reload(false);
   };
   return (
-    <div className="first" >
+    <div className="first" style={{background:pos?"#fff":""}}>
       <div className="root">
         <div className="lang">
-          <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>{lang} 🢓</div>
+          <div aria-controls="simple-menu" aria-haspopup="true" style={{color:pos?"black":"white"}} onClick={handleClick}>{lang} 🢓</div>
           
         </div>
         <Menu
@@ -74,22 +87,26 @@ const Header = () => {
           <div className="main">
             <div className="header">
               <div>
+              <Link to="/">
                 <img src={logo} alt="logo" className="image" />
+                </Link>
               </div>
 
               <div className="menu">
-                <div><Link style={{textDecoration:"none",color:"white"}}>COMPANY</Link></div>
-                <div><Link style={{textDecoration:"none",color:"white"}}>SERVICES</Link></div>
-                <div><Link style={{textDecoration:"none",color:"white"}}>OUR WORK</Link></div>
-                <div><Link style={{textDecoration:"none",color:"white"}}>CAREER</Link></div>
-                <div><Link style={{textDecoration:"none",color:"white"}}>CONTACT</Link></div>
+                <div><Link to="/about" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>COMPANY</Link></div>
+                <div><Link to="/services" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>SERVICES</Link></div>
+                <div><Link to="/product" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>OUR WORK</Link></div>
+                <div><Link to="/career" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CAREER</Link></div>
+                <div><Link to="/contact" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CONTACT</Link></div>
               </div>
             </div>
           </div>
         </Hidden>
         <Hidden lgUp>
           <div>
+            <Link to="/">
             <img src={logo} alt="logo" className="image" style={{ height: 50 }} />
+            </Link>
             <MenuIcon style={{ color: '#000' }} onClick={() => setOpen(true)} />
           </div>
           <SwipeableDrawer
@@ -99,22 +116,27 @@ const Header = () => {
             onOpen={() => setOpen(true)}
           >
             <List>
-              {['Company', 'Services', 'Our Work', 'Career', 'Contact'].map((text, index) => (
-                <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
+              {[{name:'Company',link:"/about"},
+               {name:'Services',link:"/services"},
+               {name:'Our Work',link:"/product"},
+               {name:'Career',link:"/career"},
+               {name:'Contact',link:"/contact"},].map((text, index) => (
+                <Link to={text.link} style={{textDecoration:"none",color:"black"}} onClick={()=>setOpen(false)}>
+                  <ListItem button key={text.name}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text.name} />
+                  </ListItem>
+                </Link>
               ))}
             </List>
           </SwipeableDrawer>
         </Hidden>
       </div>
-      {/* <Dialog
+      <Dialog
         open={open1}
         onClose={()=>{}}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        style={{width:"80%"}}
       >
         <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
         <DialogContent>
@@ -134,7 +156,7 @@ const Header = () => {
           Agree
         </ColorButton>
         </DialogActions>
-      </Dialog> */}
+      </Dialog>
     </div>
   );
   

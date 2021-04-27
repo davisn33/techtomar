@@ -16,7 +16,9 @@ const Footer = () => {
                 <div style={{width:"70%"}}>
                     <Grid container className="footer-container">
                         <Grid item className="footer-logo-quote text">
-                            <img src={footerLogo} alt="flogo" style={{ width: 100,marginTop:20 }}></img>
+                            <Link to="/">
+                                <img src={footerLogo} alt="flogo" style={{ width: 100,marginTop:20 }}></img>
+                            </Link>
                             <div>
                                 <p style={{ width: 200 }}>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
                             </div>
@@ -25,9 +27,9 @@ const Footer = () => {
                             <p className="footer-title">Useful Links</p>
                             <p><Link to="/about" style={{textDecoration: 'none',color:'gray'}}>About us</Link></p>
                             <p>Portfolio</p>
-                            <p>Career</p>
+                            <p><Link to="/career" style={{textDecoration: 'none',color:'gray'}}>Career</Link></p>
                             <p>Blogs</p>
-                            <p>Contact Us</p>
+                            <p><Link to="/contact" style={{textDecoration: 'none',color:'gray'}}>Contact Us</Link></p>
                         </Grid>
                         <Grid item className="footer-services text">
                             <p className="footer-title">Services</p>

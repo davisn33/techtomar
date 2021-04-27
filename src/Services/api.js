@@ -30,8 +30,13 @@ export function getAbout(lang){
 }
 
 export function getHome(lang){
-    console.log(lang)
     let form =new FormData();
     form.append("lang",lang);
     return axios.post("/home",form);
+}
+
+export function getCareerList(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    return axios.post("/career",form);
 }

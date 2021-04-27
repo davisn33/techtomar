@@ -9,6 +9,7 @@ import down from '../../Assets/down.png'
 import edit from '../../Assets/edit.png'
 import GoogleMapReact from 'google-map-react';
 import AddIcon from '@material-ui/icons/AddCircleOutline';
+import MinusIcon from '@material-ui/icons/RemoveCircleOutline';
 import "./contact.scss"
 
 
@@ -70,11 +71,10 @@ const ContactMain = ({width}) => {
         <div className="contact" style={{display:"flex",flexDirection:"column", alignItems:"center"}}>
             <Grid container style={{width:width==='xs'?"100%":"70%",padding:20}}>
 
-
-
               <Grid item md={12} xs={12} onClick={()=>select!==1?setSelect(1):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
-                <Divider/>
-                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Invester Contacts</div>
+                
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                  Invester Contacts {select!==1?<AddIcon/>:<MinusIcon/>}</div>
               </Grid>
                 {select===1&&values.map((item)=>
                 <Grid item xs={12} md={4} style={{padding:20}} >
@@ -88,8 +88,9 @@ const ContactMain = ({width}) => {
 
 
                 <Grid item md={12} xs={12} onClick={()=>select!==2?setSelect(2):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
-                <Divider/>
-                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Media Contacts</div>
+                
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                  Media Contacts {select!==2?<AddIcon/>:<MinusIcon />}</div>
               </Grid>
                 {select===2&&values.map((item)=>
                 <Grid item xs={12} md={4} style={{padding:20}} >
@@ -103,8 +104,9 @@ const ContactMain = ({width}) => {
 
 
                 <Grid item md={12} xs={12} onClick={()=>select!==3?setSelect(3):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
-                <Divider/>
-                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>Indian Office Contacts</div>
+                
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                  Indian Office Contacts {select!==3?<AddIcon />:<MinusIcon />}</div>
               </Grid>
                 {select===3&&values.map((item)=>
                 <Grid item xs={12} md={4} style={{padding:20}} >
@@ -118,8 +120,9 @@ const ContactMain = ({width}) => {
 
 
                 <Grid item md={12} xs={12} onClick={()=>select!==4?setSelect(4):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
-                <Divider/>
-                <div style={{display:"flex",flexDirection:"row",color:"#555"}}><AddIcon style={{color:"blue"}}/>German Office Contacts</div>
+                
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                    German Office Contacts {select!==4?<AddIcon />:<MinusIcon />}</div>
               </Grid>
                 {select===4&&values.map((item)=>
                 <Grid item xs={12} md={4} style={{padding:20}} >
@@ -130,7 +133,6 @@ const ContactMain = ({width}) => {
                         <div style={{color:"#555"}}>www.techtomar.com</div>
                     </div>
                 </Grid>)}
-                <Grid xs={12} md={12} style={{display:"flex",flexDirection:"column"}}><Divider/></Grid>
 
 
                 <Grid item xs={12} md={12}>
