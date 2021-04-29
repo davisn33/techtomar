@@ -12,6 +12,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle'
+import search from "../../Assets/search.png"
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -23,9 +24,15 @@ const ColorButton = withStyles((theme) => ({
 }))(Button);
 
 
+const useStyles = makeStyles({
+  paper: {
+    background: "#ABD25D"
+  }
 
+});
 
 const Header = () => {
+  const classes = useStyles();
   const [open,setOpen]=React.useState(false);
   const [open1,setOpen1]=React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -98,6 +105,7 @@ const Header = () => {
                 <div><Link to="/product" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>OUR WORK</Link></div>
                 <div><Link to="/career" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CAREER</Link></div>
                 <div><Link to="/contact" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CONTACT</Link></div>
+                <div><img style={{height:30}} src={search} alt="search"/></div>
               </div>
             </div>
           </div>
@@ -114,16 +122,17 @@ const Header = () => {
             open={open}
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
+            classes={{ paper: classes.paper }}
           >
-            <List>
+            <List >
               {[{name:'Company',link:"/about"},
                {name:'Services',link:"/services"},
                {name:'Our Work',link:"/product"},
                {name:'Career',link:"/career"},
                {name:'Contact',link:"/contact"},].map((text, index) => (
-                <Link to={text.link} style={{textDecoration:"none",color:"black"}} onClick={()=>setOpen(false)}>
+                <Link to={text.link} style={{textDecoration:"none",color:"white"}} onClick={()=>setOpen(false)}>
                   <ListItem button key={text.name}>
-                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon style={{color:"white"}}/> : <MailIcon style={{color:"white"}}/> }</ListItemIcon>
                     <ListItemText primary={text.name} />
                   </ListItem>
                 </Link>

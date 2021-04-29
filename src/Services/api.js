@@ -40,3 +40,10 @@ export function getCareerList(lang){
     form.append("lang",lang);
     return axios.post("/career",form);
 }
+
+export function getCareerDetail(lang,id){
+    let form =new FormData();
+    form.append("lang",lang);
+    form.append("id",id);
+    return axios.post("/career-detail",form);
+}

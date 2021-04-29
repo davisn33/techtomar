@@ -44,9 +44,7 @@ function App() {
           <Route path="/services">
             <ServicesPage/>
           </Route>
-          <Route path="/careerdetail">
-            <CareerDetail/>
-          </Route>
+          <Route path="/careerdetail/:id" component={CareerDetail}/>
           <Route path="/career">
             <Career/>
           </Route>

@@ -1,7 +1,8 @@
 import React from 'react'
 import Banner from '../Components/About/Banner'
+import CareerMain from "../Components/CareerDetail"
 
-const CareerDetail = () => {
+const CareerDetail = ({match}) => {
     React.useEffect(()=>{
         window.scrollTo({
             top: 0,
@@ -11,6 +12,7 @@ const CareerDetail = () => {
     return (
         <div>
             <Banner text="career"/>
+            <CareerMain id={match.params.id}/>
         </div>
     )
 }
