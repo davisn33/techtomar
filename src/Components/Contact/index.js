@@ -73,7 +73,7 @@ const ContactMain = ({width}) => {
 
               <Grid item md={12} xs={12} onClick={()=>select!==1?setSelect(1):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
                 
-                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
                   Invester Contacts {select!==1?<AddIcon/>:<MinusIcon/>}</div>
               </Grid>
                 {select===1&&values.map((item)=>
@@ -89,7 +89,7 @@ const ContactMain = ({width}) => {
 
                 <Grid item md={12} xs={12} onClick={()=>select!==2?setSelect(2):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
                 
-                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
                   Media Contacts {select!==2?<AddIcon/>:<MinusIcon />}</div>
               </Grid>
                 {select===2&&values.map((item)=>
@@ -105,7 +105,7 @@ const ContactMain = ({width}) => {
 
                 <Grid item md={12} xs={12} onClick={()=>select!==3?setSelect(3):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
                 
-                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
                   Indian Office Contacts {select!==3?<AddIcon />:<MinusIcon />}</div>
               </Grid>
                 {select===3&&values.map((item)=>
@@ -121,7 +121,7 @@ const ContactMain = ({width}) => {
 
                 <Grid item md={12} xs={12} onClick={()=>select!==4?setSelect(4):setSelect(0)} style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column",height:50,cursor:"pointer"}}>
                 
-                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",color:"white",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
+                <div style={{display:"flex",flexDirection:"row",padding:10,borderRadius:5,fontWeight:"bold",background:"linear-gradient(90deg, rgba(171,209,95,1) 30%, rgba(28,174,149,1) 60%)",justifyContent:"space-between"}}>
                     German Office Contacts {select!==4?<AddIcon />:<MinusIcon />}</div>
               </Grid>
                 {select===4&&values.map((item)=>

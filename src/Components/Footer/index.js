@@ -13,15 +13,12 @@ const Footer = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", justifyContent: "center", background: "#000000d9" }}>
-                <div style={{width:"70%"}}>
+                <div style={{width:"60%"}}>
                     <Grid container className="footer-container">
                         <Grid item className="footer-logo-quote text">
                             <Link to="/">
                                 <img src={footerLogo} alt="flogo" style={{ width: 100,marginTop:20 }}></img>
                             </Link>
-                            <div>
-                                <p style={{ width: 200 }}>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-                            </div>
                         </Grid>
                         <Grid item className="footer-useful text">
                             <p className="footer-title">Useful Links</p>
