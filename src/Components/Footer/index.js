@@ -47,8 +47,8 @@ const Footer = () => {
                                 <img src={google} alt=''></img>
                                 <img src={twit} alt=''></img>
                             </div>
-                            <p>Privacy Notice</p>
-                            <p>Cookie Policy</p>
+                            <p><Link to="/privacy" style={{textDecoration: 'none',color:'gray'}}>Privacy Notice</Link></p>
+                            <p><Link to="/cookies" style={{textDecoration: 'none',color:'gray'}}>Cookie Policy</Link></p>
                             <p>Customise Cookies</p>
                             <p>Disclaimer</p>
                         </Grid>
