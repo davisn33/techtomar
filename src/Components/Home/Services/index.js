@@ -18,9 +18,14 @@ const Services = ({img_url,services}) => {
                 <p>Map a strategy, build a solution or elevate your product experience with foucsed engagements available as standalone offerings or as part of your project's service stack.</p>
                 <div style={{display:"flex",justifyContent:"center"}}>
                 <Grid container style={{width:"65%"}}>
-                    {services.map((item,i)=>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}} onClick={()=>{history.push("/service/"+item.id)}}>
+                    {[...services,...services,...services].map((item,i)=>
+                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center",
+                    
+                    padding: 30,
+                    margin: "10px 0px",
+                    }} onClick={()=>{history.push("/service/"+item.id)}}>
                         <Card cardImage={img_url+"/"+item.image} number={"0"+(i+1).toString()} cardTitle={item.title} description={item.description}/>
+                        
                     </Grid>
                     )}
                 </Grid>
