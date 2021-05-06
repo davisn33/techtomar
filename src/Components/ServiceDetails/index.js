@@ -46,7 +46,7 @@ const ServiceDetailMain = ({width}) => {
                 
             </div>
 
-            <div style={{ width: "100%" ,minHeight:"50vh",background: "linear-gradient(90deg, rgba(28,174,149,1) 20%, rgba(171,209,95,1) 60%)"}}>
+            {/* <div style={{ width: "100%" ,minHeight:"50vh",background: "linear-gradient(90deg, rgba(28,174,149,1) 20%, rgba(171,209,95,1) 60%)"}}>
                     <Grid container>
                         <Grid item xs={12} md={6} style={{display:"flex", justifyContent:"center",alignItems:"center",minHeight:"50vh"}}>
                             www
@@ -55,7 +55,7 @@ const ServiceDetailMain = ({width}) => {
                             ddd
                         </Grid>
                     </Grid>
-            </div>
+            </div> */}
         </div>
     )
 }

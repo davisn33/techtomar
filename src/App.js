@@ -35,9 +35,7 @@ function App() {
           <Route path="/contact">
             <Contact/>
           </Route>
-          <Route path="/service">
-            <ServiceDetail/>
-          </Route>
+          <Route path="/service/:id" component={ServiceDetail}/>
           <Route path="/privacy">
             <Privacy />
           </Route>

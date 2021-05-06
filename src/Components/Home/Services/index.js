@@ -8,33 +8,21 @@ import cloudImage from "../../../Assets/service-icon3.png";
 import productImage from "../../../Assets/service-icon4.png";
 import databaseImage from "../../../Assets/service-icon5.png";
 import { Grid } from "@material-ui/core";
-
-const Services = () => {
+import {useHistory} from "react-router-dom"
+const Services = ({img_url,services}) => {
+    let history=useHistory();
     return (
         <div style={{ background: '#80808029',paddingBottom:40 }}>
             <div className="services-container">
                 <h2>IT Services</h2>
                 <p>Map a strategy, build a solution or elevate your product experience with foucsed engagements available as standalone offerings or as part of your project's service stack.</p>
                 <div style={{display:"flex",justifyContent:"center"}}>
-                <Grid container style={{width:"85%"}}>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                        <Card cardImage={serviceImage} number='01' cardTitle='Software Development' />
+                <Grid container style={{width:"65%"}}>
+                    {[...services,...services,...services,...services].map((item,i)=>
+                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}} onClick={()=>{history.push("/service/"+item.id)}}>
+                        <Card cardImage={img_url+"/"+item.image} number={"0"+(i+1).toString()} cardTitle={item.title} description={item.description}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                    <Card cardImage={webImage} number='02' cardTitle='Web Development' />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                    <Card cardImage={AnalyticImage} number='03' cardTitle='Analytic Solutions' />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                    <Card cardImage={cloudImage} number='04' cardTitle='Cloud &amp; DevOps' />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                    <Card cardImage={productImage} number='05' cardTitle='Product &amp; Design' />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center"}}>
-                    <Card cardImage={databaseImage} number='06' cardTitle='Database Administrator' />
-                    </Grid>
+                    )}
                 </Grid>
                 </div>
             </div>

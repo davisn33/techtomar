@@ -5,7 +5,7 @@ axios.defaults.baseURL="https://vinaymishrapoet.com/newtech/public/api";
 export function getCookies(lang){
     let form =new FormData();
     form.append("lang",lang);
-    form.append("page_name","cookies");
+    form.append("page_name","cookie");
     return axios.post("page",form);
 }
 
@@ -46,4 +46,16 @@ export function getCareerDetail(lang,id){
     form.append("lang",lang);
     form.append("id",id);
     return axios.post("/career-detail",form);
+}
+
+export function getServices(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    return axios.post("/service",form);
+}
+export function getServiceDetail(lang,id){
+    let form =new FormData();
+    form.append("lang",lang);
+    form.append("id",id);
+    return axios.post("/service-detail",form);
 }

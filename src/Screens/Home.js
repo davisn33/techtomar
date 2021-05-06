@@ -5,13 +5,15 @@ import Projects from '../Components/Home/Projects'
 import Services from '../Components/Home/Services'
 import Slider from '../Components/Home/Slider'
 import Testimonoals from '../Components/Home/Testimonials'
-import {getHome} from '../Services/api'
+import {getHome,getServices} from '../Services/api'
 
 const Home = () => {
     const [sliderurl,setSliderurl] = React.useState(null)
     const [reviewurl,setReviewurl] = React.useState(null)
     const [sliders,setSliders] = React.useState([]);
     const [reviews,setReviews] = React.useState([])
+    const [bottom,setBottom] = React.useState([])
+    const [bottom_url,setBottom_url] = React.useState("")
     React.useEffect(()=>{
         window.scrollTo({
             top: 0,
@@ -28,12 +30,21 @@ const Home = () => {
             .catch((e)=>{
 
             })
+            getServices(lang?lang:"en")
+              .then((res)=>{
+                  
+                setBottom_url(res.data.image_url)
+                setBottom(res.data.data.buttom)
+              })
+              .catch((e)=>{
+  
+              })
 
     },[])
     return (
         <div style={{overflowX:"hidden"}}>
             {sliderurl && <Slider sliderurl={sliderurl} sliders={sliders} />}
-            <Services/>
+            <Services img_url={bottom_url} services={bottom}/>
             <Product/>
             <Industry/>
             <Projects/>
