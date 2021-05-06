@@ -19,6 +19,7 @@ const Footer = () => {
                             <Link to="/">
                                 <img src={footerLogo} alt="flogo" style={{ width: 100,marginTop:20 }}></img>
                             </Link>
+                            <div style={{color:"white"}}>this is a dummy text for the wensite, please ignore this is a dummy text for the wensite, please ignore</div>
                         </Grid>
                         <Grid item className="footer-useful text">
                             <p className="footer-title">Useful Links</p>
@@ -41,7 +42,6 @@ const Footer = () => {
                                 <img src={fb} alt=''></img>
                                 <img src={li} alt=''></img>
                                 <img src={yt} alt=''></img>
-                                <img src={google} alt=''></img>
                                 <img src={twit} alt=''></img>
                             </div>
                             <p><Link to="/privacy" style={{textDecoration: 'none',color:'gray'}}>Privacy Notice</Link></p>
