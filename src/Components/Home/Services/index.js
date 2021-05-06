@@ -18,7 +18,7 @@ const Services = ({img_url,services}) => {
                 <p>Map a strategy, build a solution or elevate your product experience with foucsed engagements available as standalone offerings or as part of your project's service stack.</p>
                 <div style={{display:"flex",justifyContent:"center"}}>
                 <Grid container style={{width:"65%"}}>
-                    {[...services,...services,...services].map((item,i)=>
+                    {services.map((item,i)=>
                     <Grid item xs={12} sm={6} md={4} style={{display:"flex",justifyContent:"center",
                     
                     padding: 30,
