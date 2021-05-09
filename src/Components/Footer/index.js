@@ -24,9 +24,9 @@ const Footer = () => {
                         <Grid item className="footer-useful text">
                             <p className="footer-title">Useful Links</p>
                             <p><Link to="/about" style={{textDecoration: 'none',color:'gray'}}>About us</Link></p>
-                            <p><Link to="/product" style={{textDecoration: 'none',color:'gray'}}>Portfolio</Link></p>
+                            <p><Link to="/product" style={{textDecoration: 'none',color:'gray'}}>Products</Link></p>
                             <p><Link to="/career" style={{textDecoration: 'none',color:'gray'}}>Career</Link></p>
-                            <p>Blogs</p>
+                            <p><Link to="/services" style={{textDecoration: 'none',color:'gray'}}>Service</Link></p>
                             <p><Link to="/contact" style={{textDecoration: 'none',color:'gray'}}>Contact Us</Link></p>
                         </Grid>
                         <Grid item className="footer-services text">

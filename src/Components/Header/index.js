@@ -13,6 +13,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle'
 import search from "../../Assets/search.png"
+import triangle from "../../Assets/triangle.png"
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -78,7 +79,7 @@ const Header = () => {
     <div className="first" style={{background:pos?"#fff":""}}>
       <div className="root">
         <div className="lang">
-          <div aria-controls="simple-menu" aria-haspopup="true" style={{color:pos?"black":"white"}} onClick={handleClick}>{lang} 🢓</div>
+          <div aria-controls="simple-menu" aria-haspopup="true" style={{color:pos?"black":"white"}} onClick={handleClick}>{lang} <img style={{width:10,height:10}} src={triangle}/></div>
           
         </div>
         <Menu
@@ -109,7 +110,7 @@ const Header = () => {
                     aria-haspopup="true"
                     onMouseEnter={()=>setPop(true)}
                     onMouseLeave={()=>setPop(false)}><NavLink to="/services" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>SERVICES</NavLink></div>
-                <div><Link to="/product" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>OUR WORK</Link></div>
+                <div><Link to="/product" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>PRODUCTS</Link></div>
                 <div><Link to="/career" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CAREER</Link></div>
                 <div><Link to="/contact" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CONTACT</Link></div>
                 <div><img style={{height:30}} src={search} alt="search"/></div>
