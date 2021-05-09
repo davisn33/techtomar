@@ -9,6 +9,19 @@ export function getCookies(lang){
     return axios.post("page",form);
 }
 
+export function getDisclaimer(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    form.append("page_name","disclaimer");
+    return axios.post("page",form);
+}
+export function getCustomize(lang){
+    let form =new FormData();
+    form.append("lang",lang);
+    form.append("page_name","customise");
+    return axios.post("page",form);
+}
+
 export function getPolicy(lang){
     let form =new FormData();
     form.append("lang",lang);

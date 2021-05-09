@@ -1,10 +1,10 @@
 import React from 'react'
 import Banner from '../Components/About/Banner'
-import Privacynotice from '../Components/Privacy/Privacynotice'
+import CustomizeComp from '../Components/CustomizeComp'
 import bannerimg from "../Assets/service-banner-bg.png"
 
-const Privacy = () => {
-     React.useEffect(()=>{
+const Customize = () => {
+    React.useEffect(()=>{
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
@@ -12,10 +12,10 @@ const Privacy = () => {
     },[])
     return (
         <div>
-            <Banner text="Privacy Notice" img={bannerimg}/>
-            <Privacynotice/>
+            <Banner text="Customize" img={bannerimg}/>
+            <CustomizeComp/>
         </div>
     )
 }
 
-export default Privacy
+export default Customize

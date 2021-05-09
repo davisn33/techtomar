@@ -4,6 +4,7 @@ import Services from '../Components/Home/Services'
 import Partners from '../Components/Services/Partners'
 import Service1980 from '../Components/Services/Service1980'
 import {getServices} from "../Services/api"
+import bannerimg from "../Assets/service-banner-bg.png"
 
 const ServicesPage = () => {
     const [top,setTop]=React.useState([]);
@@ -30,7 +31,7 @@ const ServicesPage = () => {
     ,[])
     return (
         <div>
-            <Banner text="Services" />
+            <Banner text="Services" img={bannerimg}/>
             <Service1980 img_url={img_url} services={top}/>
             <Services img_url={img_url} services={bottom}/>
             <Partners/>

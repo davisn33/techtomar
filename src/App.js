@@ -18,6 +18,8 @@ import ServiceDetail from "./Screens/ServiceDetail";
 import Contact from "./Screens/Contact";
 import Career from "./Screens/Career";
 import CareerDetail from "./Screens/CareerDetail";
+import Disclaimer from "./Screens/Disclaimer";
+import Customize from "./Screens/Customize";
 
 function App() {
   React.useEffect(()=>{
@@ -51,6 +53,12 @@ function App() {
           </Route>
           <Route path="/cookies">
             <Cookies/>
+          </Route>
+          <Route path="/disclaimer">
+            <Disclaimer/>
+          </Route>
+          <Route path="/customize">
+            <Customize/>
           </Route>
           <Route path="/">
             <Home/>

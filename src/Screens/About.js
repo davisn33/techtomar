@@ -6,6 +6,7 @@ import Figures from "../Components/About/Figures";
 import Whychooseus from "../Components/About/Whychooseus";
 import Team from "../Components/About/Team";
 import {getAbout} from "../Services/api"
+import bannerimg from "../Assets/service-banner-bg.png"
 
 const About = () => {
         const [whoweare,setWhoweare]= React.useState(null)
@@ -33,7 +34,7 @@ const About = () => {
         },[])
     return (
         <>
-            <Banner text="About"/>
+            <Banner text="About" img={bannerimg}/>
             {whoweare&&<Whoweare heading={whoweare.heading} title={whoweare.title} description={whoweare.description} image={baseurl+"/"+whoweare.image}/>}
             {services&&<Cards services={services} baseurl={baseurl}/>}
             <Figures />

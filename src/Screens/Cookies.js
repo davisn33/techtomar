@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../Components/About/Banner'
 import CookiePolicy from '../Components/CookiePolicy'
+import bannerimg from "../Assets/service-banner-bg.png"
 
 
 const Cookies = () => {
@@ -12,7 +13,7 @@ const Cookies = () => {
     },[])
     return (
         <div>
-            <Banner text="Cookie Policy"/>
+            <Banner text="Cookie Policy" img={bannerimg}/>
             <CookiePolicy/>
         </div>
     )
