@@ -46,8 +46,8 @@ const Footer = () => {
                             </div>
                             <p><Link to="/privacy" style={{textDecoration: 'none',color:'gray'}}>Privacy Notice</Link></p>
                             <p><Link to="/cookies" style={{textDecoration: 'none',color:'gray'}}>Cookie Policy</Link></p>
-                            <p>Customise Cookies</p>
-                            <p>Disclaimer</p>
+                            <p><Link to="/customize" style={{textDecoration: 'none',color:'gray'}}>Customise Cookies</Link></p>
+                            <p><Link to="/disclaimer" style={{textDecoration: 'none',color:'gray'}}>Disclaimer</Link></p>
                         </Grid>
                     </Grid>
                 </div>
