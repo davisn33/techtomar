@@ -24,9 +24,9 @@ const CareerMain = ({width,careerlist}) => {
                     <div style={{background:"white",borderRadius:5,display:"flex",padding:30,flexDirection:"column",alignItems:"flex-start"}}>
                         <h2 style={{color:"#333232"}}>{item.name}</h2>
                         <div style={{fontWeight:"bold",display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
-                            <div>Type:<span style={{color:"#444",fontWeight:"normal"}}> {item.work_status}</span> Exp:<span style={{color:"#444",fontWeight:"normal"}}> {item.exp}</span> </div>
+                            <div style={{marginTop:3}}>Type:<span style={{color:"#444",fontWeight:"normal"}}> {item.work_status}</span> Exp:<span style={{color:"#444",fontWeight:"normal"}}> {item.exp}</span> </div>
                         
-                            <div>Vacancy:<span style={{color:"#444",fontWeight:"normal"}}> {item.vacancy}</span> </div>
+                            <div style={{marginTop:3}}>Vacancy Location:<span style={{color:"#444",fontWeight:"normal"}}> {item.vacancy}</span> </div>
                         </div>
                         <div style={{marginTop:20,textAlign:"left",fontSize:13,paddingRight:20,color:"#555"}}>
                         {item.description}

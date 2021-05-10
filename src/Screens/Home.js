@@ -22,6 +22,7 @@ const Home = () => {
         let lang = localStorage.getItem("lang");
             getHome(lang?lang:"en")
             .then((res)=>{
+                console.log(res.data.data.slider)
                 setSliderurl(res.data.slider_image_url)
                 setReviewurl(res.data.review_image_url)
                 setSliders(res.data.data.slider)

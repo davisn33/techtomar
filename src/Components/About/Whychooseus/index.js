@@ -19,10 +19,10 @@ const Whychooseus = ({width,whychooseus,baseurl}) => {
 
                 <Grid item md={6} style={{padding:10}}>
                 <div class="head3" >{whychooseus.description}</div>
-                <video src={baseurl+"/"+whychooseus.video_url} alt ="bg" style={{width: "100%",marginTop: 50}}/>
+                <video controls src={"http://techslides.com/demos/sample-videos/small.mp4"} alt ="bg" style={{width: "100%",marginTop: 50}}/>
                 </Grid>
             </Grid>
-            
+            {/* baseurl+"/"+whychooseus.video_url */}
         </div>
     )
 }

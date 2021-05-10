@@ -16,10 +16,9 @@ const CareerDetail = ({id}) => {
             <div style={{ width: '70%', display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
                 <h2 style={{ color: "#1CAF95" }}>{content.name}</h2>
                 <div style={{ fontWeight: "bold", display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                    <div>Type:<span style={{ color: "#444", fontWeight: "normal" }}> {content.work_status}</span> Exp:<span style={{ color: "#444", fontWeight: "normal" }}> {content.exp}</span> </div>
-
-                    <div>Vacancy:<span style={{ color: "#444", fontWeight: "normal" }}> {content.vacancy}</span> </div>
-                </div>
+                    <div>Type:<span style={{ color: "#444", fontWeight: "normal" }}> {content.work_status}</span> Exp:<span style={{ color: "#444", fontWeight: "normal" }}> {content.exp}</span> 
+                        {" Vacancy Location"}:<span style={{ color: "#444", fontWeight: "normal" }}> {content.vacancy}</span> </div>
+                    </div>
                 <div style={{ textAlign: 'left', color: "grey", fontSize: 17, fontWeight: 500, lineHeight: 1.5 }} dangerouslySetInnerHTML={{ __html: content.description }} />
 
             </div>
