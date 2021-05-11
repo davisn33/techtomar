@@ -62,7 +62,7 @@ const Slider = ({width,sliderurl,sliders}) => {
                             <div className={classes.content}>
                                 <div style={{width:width==='xs'?200:500,textAlign:"left"}}>
                                 <h1 style={{fontSize:width==='xs'?20:40,lineHeight:1.5}}>{item.name}</h1>
-                                <h1 style={{fontSize:width==='xs'?20:40,lineHeight:1,color:"#1BAC94"}}>Information <span style={{color:"#A5CB5E"}}>Technology</span></h1>
+                                <h1 style={{fontSize:width==='xs'?20:40,lineHeight:1,color:"#1BAC94"}}>{item.text2}<span style={{color:"#A5CB5E"}}>{item.text3}</span></h1>
                                 </div>
                             </div>
                         </div>
