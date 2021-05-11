@@ -1,8 +1,10 @@
 import React from 'react'
 import bg from "../../../Assets/india-banner.png"
+import videoimg from "../../../Assets/video.png"
 import { Grid,withWidth  } from '@material-ui/core';
 
 const Whychooseus = ({width,whychooseus,baseurl}) => {
+    const [video,setVideo] = React.useState(false)
     return (
         <div style={{minHeight:"100vh",backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundPosition:"center",backgroundSize:"cover",
         display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -19,7 +21,8 @@ const Whychooseus = ({width,whychooseus,baseurl}) => {
 
                 <Grid item md={6} style={{padding:10}}>
                 <div class="head3" >{whychooseus.description}</div>
-                <video controls src={"http://techslides.com/demos/sample-videos/small.mp4"} alt ="bg" style={{width: "100%",marginTop: 50}}/>
+                {!video?<img src={videoimg} alt={"videoimg"} style={{width: "80%"}} onClick={()=>setVideo(true)}/>
+                :<video controls src={"http://techslides.com/demos/sample-videos/small.mp4"} alt ="bg" style={{width: "100%",marginTop: 50}}/>}
                 </Grid>
             </Grid>
             {/* baseurl+"/"+whychooseus.video_url */}

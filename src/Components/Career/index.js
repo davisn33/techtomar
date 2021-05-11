@@ -31,7 +31,7 @@ const CareerMain = ({width,careerlist}) => {
                         <div style={{marginTop:20,textAlign:"left",fontSize:13,paddingRight:20,color:"#555"}}>
                         {item.description}
                         </div>
-                        <CssButton variant="contained" style={{width:170,height:45,marginTop:20}} onClick={()=>{history.push("/careerdetail/"+item.id)}}><div style={{fontSize:12,fontWeight:'bolder'}}>Read More ➔</div></CssButton>
+                        <CssButton variant="contained" style={{width:170,height:45,marginTop:20}} onClick={()=>{history.push("/careerdetail/"+item.id)}}><div style={{fontSize:12,fontWeight:'bolder'}}>Apply Now ➔</div></CssButton>
                     </div>
                 </Grid>)}
             </Grid>
