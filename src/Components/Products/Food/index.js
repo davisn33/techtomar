@@ -6,7 +6,7 @@ import {getProducts} from "../../../Services/api"
 const Food = () => {
     const [base,setBase]=React.useState("");
     const [array,setArray]=React.useState([]);
-    const [readmore,setReadmore]=React.useState([]);
+    const [readmore,setReadmore]=React.useState(false);
 
     React.useEffect(() => {
         let lang=localStorage.getItem("lang")
