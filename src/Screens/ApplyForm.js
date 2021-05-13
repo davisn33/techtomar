@@ -104,10 +104,10 @@ const ApplyForm = (props) => {
             <div style={{padding:50,width:"50%",display:"flex",flexDirection:"column"}}>
 
             <h2 style={{textAlign:"left"}}>{`Apply for ${name}`}</h2>
-            <CssTextField value={first} fullWidth style={{marginTop:50}} onChange={(e)=>setFirst(e.target.value)} label="First name*" variant="outlined"/>
-            <CssTextField value={last} fullWidth style={{marginTop:50}} onChange={(e)=>setLast(e.target.value)} label="Last name" variant="outlined"/>
-            <CssTextField value={mobile} fullWidth style={{marginTop:50}} onChange={(e)=>setMobile(e.target.value)} label="Mobile No." variant="outlined"/>
-            <CssTextField value={email} fullWidth style={{marginTop:50}} onChange={(e)=>setEmail(e.target.value)} label="Email" variant="outlined"/>
+            <CssTextField value={first} fullWidth style={{marginTop:40}} onChange={(e)=>setFirst(e.target.value)} label="First name*" variant="outlined"/>
+            <CssTextField value={last} fullWidth style={{marginTop:40}} onChange={(e)=>setLast(e.target.value)} label="Last name" variant="outlined"/>
+            <CssTextField value={mobile} fullWidth style={{marginTop:40}} onChange={(e)=>setMobile(e.target.value)} label="Mobile No." variant="outlined"/>
+            <CssTextField value={email} fullWidth style={{marginTop:40}} onChange={(e)=>setEmail(e.target.value)} label="Email" variant="outlined"/>
 
             <CssTextField
                 id="standard-select-currency"
@@ -116,7 +116,7 @@ const ApplyForm = (props) => {
                 value={lang}
                 onChange={(e)=>{setLang(e.target.value)}}
                 variant="outlined"
-                style={{marginTop:50}}
+                style={{marginTop:40}}
             >
                 {languages.map((option) => (
                     <MenuItem key={option.value} value={option.value} style={{textAlign:"left"}}>
@@ -125,11 +125,11 @@ const ApplyForm = (props) => {
                 ))}
             </CssTextField>
 
-            <CssTextField value={street} fullWidth style={{marginTop:50}} onChange={(e)=>setStreet(e.target.value)} label="Street" variant="outlined"/>
-            <CssTextField value={zip} fullWidth style={{marginTop:50}} onChange={(e)=>setZip(e.target.value)} label="ZIP/Postal code" variant="outlined"/>
-            <CssTextField value={city} fullWidth style={{marginTop:50}} onChange={(e)=>setCity(e.target.value)} label="City" variant="outlined"/>
+            <CssTextField value={street} fullWidth style={{marginTop:40}} onChange={(e)=>setStreet(e.target.value)} label="Street" variant="outlined"/>
+            <CssTextField value={zip} fullWidth style={{marginTop:40}} onChange={(e)=>setZip(e.target.value)} label="ZIP/Postal code" variant="outlined"/>
+            <CssTextField value={city} fullWidth style={{marginTop:40}} onChange={(e)=>setCity(e.target.value)} label="City" variant="outlined"/>
             
-            <div style={{display:"flex",alignItems:"center",marginTop:50}}>
+            <div style={{display:"flex",alignItems:"center",marginTop:40}}>
             <CssButton
               variant="contained"
               component="label"
@@ -145,7 +145,7 @@ const ApplyForm = (props) => {
             {!motivation?"":motivation.name}
             </div>
             
-            <div style={{display:"flex",alignItems:"center",marginTop:50}}>
+            <div style={{display:"flex",alignItems:"center",marginTop:40}}>
             <CssButton
               variant="contained"
               component="label"
@@ -181,7 +181,7 @@ const ApplyForm = (props) => {
             </div>
            
             </div>
-            <div style={{marginTop:50,color:"red"}}>{error}</div>
+            <div style={{marginTop:10,color:"red"}}>{error}</div>
             <CssButton variant="contained" style={{width:170,height:45,marginTop:20,marginBottom:100}} onClick={handleClick}><div style={{fontSize:12,fontWeight:'bolder'}}>Submit</div></CssButton>
             
         </div>
