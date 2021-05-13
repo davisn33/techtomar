@@ -20,6 +20,7 @@ import Career from "./Screens/Career";
 import CareerDetail from "./Screens/CareerDetail";
 import Disclaimer from "./Screens/Disclaimer";
 import Customize from "./Screens/Customize";
+import ApplyForm from "./Screens/ApplyForm";
 
 function App() {
   React.useEffect(()=>{
@@ -45,6 +46,7 @@ function App() {
             <ServicesPage/>
           </Route>
           <Route path="/careerdetail/:id" component={CareerDetail}/>
+          <Route path="/applynow/:id" component={ApplyForm}/>
           <Route path="/career">
             <Career/>
           </Route>
