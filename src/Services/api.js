@@ -66,7 +66,15 @@ export function getServices(lang){
     form.append("lang",lang);
     return axios.post("/service",form);
 }
+
 export function getServiceDetail(lang,id){
+    let form =new FormData();
+    form.append("lang",lang);
+    form.append("id",id);
+    return axios.post("/service-detail",form);
+}
+
+export function applyForm(lang,id){
     let form =new FormData();
     form.append("lang",lang);
     form.append("id",id);

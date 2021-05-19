@@ -16,15 +16,18 @@ import "./contact.scss"
 const values=[
 {
   image:mail,
-  text:"Mail Here"
+  text:"Mail Here",
+  data:"contact@techtomar.de"
 },
 {
   image:call,
-  text:"Call Us Now"
+  text:"Call Us Now",
+  data:"+4915750884774"
 },
 {
   image:location,
-  text:"Visit Here"
+  text:"Visit Here",
+  data:"Kantor-Reiche-Ring 37, 38162, Cremlingen"
 },
 ]
 
@@ -81,8 +84,8 @@ const ContactMain = ({width}) => {
                     <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
                         <img src={item.image} style={{width:70}}></img>
                         <h4>{item.text}</h4>
-                        <div style={{color:"#555"}}>support@gmail.com</div>
-                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                        <div style={{color:"#555"}}>{item.data}</div>
+                        {/* <div style={{color:"#555"}}>https://techtomar.de</div> */}
                     </div>
                 </Grid>)}
 
@@ -97,8 +100,8 @@ const ContactMain = ({width}) => {
                     <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
                         <img src={item.image} style={{width:70}}></img>
                         <h4>{item.text}</h4>
-                        <div style={{color:"#555"}}>support@gmail.com</div>
-                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                        <div style={{color:"#555"}}>{item.data}</div>
+                        {/* <div style={{color:"#555"}}>https://techtomar.de</div> */}
                     </div>
                 </Grid>)}
 
@@ -113,8 +116,8 @@ const ContactMain = ({width}) => {
                     <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
                         <img src={item.image} style={{width:70}}></img>
                         <h4>{item.text}</h4>
-                        <div style={{color:"#555"}}>support@gmail.com</div>
-                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                        <div style={{color:"#555"}}>{item.data}</div>
+                        {/* <div style={{color:"#555"}}>https://techtomar.de</div> */}
                     </div>
                 </Grid>)}
 
@@ -129,8 +132,8 @@ const ContactMain = ({width}) => {
                     <div style={{background:"#eee",height:200,borderRadius:10,padding:10}}>
                         <img src={item.image} style={{width:70}}></img>
                         <h4>{item.text}</h4>
-                        <div style={{color:"#555"}}>support@gmail.com</div>
-                        <div style={{color:"#555"}}>www.techtomar.com</div>
+                        <div style={{color:"#555"}}>{item.data}</div>
+                        {/* <div style={{color:"#555"}}>https://techtomar.de</div> */}
                     </div>
                 </Grid>)}
 

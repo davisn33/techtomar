@@ -5,6 +5,7 @@ import fb from "../../Assets/facebook.png"
 import li from "../../Assets/linkedin.png";
 import yt from "../../Assets/youtube.png";
 import google from "../../Assets/gmail.png";
+import insta from "../../Assets/insta.png";
 import twit from "../../Assets/twitter.png";
 import {Grid} from "@material-ui/core"
 import {Link} from "react-router-dom";
@@ -39,10 +40,10 @@ const Footer = () => {
                         <Grid item className="footer-follow text">
                             <p className="footer-title">Follow Us On</p>
                             <div style={{ display: "flex" }}>
-                                <img src={fb} alt=''></img>
-                                <img src={li} alt=''></img>
-                                <img src={yt} alt=''></img>
-                                <img src={twit} alt=''></img>
+                                <a href="https://www.facebook.com/techtomargroup"><img  src={fb} alt=''></img></a>
+                                <a href="https://www.linkedin.com/company/tech-tomar"><img src={li} alt=''></img></a>
+                                <a href="https://www.youtube.com/channel/UCnvnqoFVqMxrpY2V_GP3SOg"><img src={yt} alt=''></img></a>
+                                <a href="https://www.instagram.com/techtomargroup"><img src={insta} alt=''></img></a>
                             </div>
                             <p><Link to="/privacy" style={{textDecoration: 'none',color:'gray'}}>Privacy Notice</Link></p>
                             <p><Link to="/cookies" style={{textDecoration: 'none',color:'gray'}}>Cookie Policy</Link></p>
