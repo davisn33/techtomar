@@ -74,9 +74,15 @@ export function getServiceDetail(lang,id){
     return axios.post("/service-detail",form);
 }
 
-export function applyForm(lang,id){
+export function applyForm(last_name,number,email,language,street,zip,cover,cv){
     let form =new FormData();
-    form.append("lang",lang);
-    form.append("id",id);
-    return axios.post("/service-detail",form);
+    form.append("last_name",last_name);
+    form.append("number",number);
+    form.append("email",email);
+    form.append("language",language);
+    form.append("street",street);
+    form.append("zip",zip);
+    form.append("cover",cover);
+    form.append("cv",cv);
+    return axios.post("/post_job",form);
 }

@@ -3,7 +3,13 @@ import React from 'react'
 import Banner from '../Components/About/Banner';
 import bannerimg from "../Assets/service-banner-bg.png"
 import { useHistory } from "react-router-dom";
-import { getCareerDetail } from '../Services/api';
+import { getCareerDetail,applyForm } from '../Services/api';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const CssTextField = withStyles({
     root: {
@@ -60,6 +66,7 @@ const CssTextField = withStyles({
 
 const ApplyForm = (props) => {
     const history=useHistory()
+    const [open,setOpen] = React.useState(false);
     const [first,setFirst] = React.useState("");
     const [last,setLast] = React.useState("");
     const [mobile,setMobile] = React.useState("");
@@ -91,7 +98,21 @@ const ApplyForm = (props) => {
         else if(!privacy)
             setError("Please Agree With Privacy Policy")
         else{
-            //
+          applyForm(first+" "+last,mobile,email,lang,street,zip,motivation,resume)
+          .then(res=>{
+            if(res.data.status==1){
+                setOpen(true)
+                setFirst("")
+                setMobile("")
+                setLast("")
+                setEmail("")
+                setLang('German / Deutsch')
+                setStreet("")
+                setZip("")
+                setMotivation("")
+                setResume("")
+            }
+          })
         }
 
     }
@@ -185,6 +206,11 @@ const ApplyForm = (props) => {
             <CssButton variant="contained" style={{width:170,height:45,marginTop:20,marginBottom:100}} onClick={handleClick}><div style={{fontSize:12,fontWeight:'bolder'}}>Submit</div></CssButton>
             
         </div>
+        <Snackbar open={open} autoHideDuration={3000} onClose={()=>setOpen(false)}>
+          <Alert onClose={()=>setOpen(false)} severity="success">
+            Submitted Successfully!
+          </Alert>
+        </Snackbar>
         </>
     )
 }
