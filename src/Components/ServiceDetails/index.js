@@ -85,7 +85,7 @@ const ServiceDetailMain = ({width,service,img_url,development,details}) => {
                     {development.map((item)=>
                     <Grid item xs={12} md={6} >
                         <div style={{padding:10}}>
-                            <h3>{item.title}</h3>
+                            <h2>{item.title}</h2>
                             <div>
                                 {item.description}
                             </div>
