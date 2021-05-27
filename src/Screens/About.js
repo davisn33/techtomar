@@ -22,7 +22,7 @@ const About = () => {
             let lang = localStorage.getItem("lang");
             getAbout(lang?lang:"en")
             .then((res)=>{
-                console.log(res.data.data.why_choose_us)
+                console.log(res.data)
                 setBaseurl(res.data.image_url);
                 setWhoweare(res.data.data.who_we_are);
                 setServices(res.data.data.services);

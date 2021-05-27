@@ -10,8 +10,10 @@ import {getHome,getServices} from '../Services/api'
 const Home = () => {
     const [sliderurl,setSliderurl] = React.useState(null)
     const [reviewurl,setReviewurl] = React.useState(null)
+    const [softwarewurl,setSoftwarewurl] = React.useState(null)
     const [sliders,setSliders] = React.useState([]);
     const [reviews,setReviews] = React.useState([])
+    const [software,setSoftware] = React.useState([])
     const [bottom,setBottom] = React.useState([])
     const [bottom_url,setBottom_url] = React.useState("")
     React.useEffect(()=>{
@@ -22,11 +24,13 @@ const Home = () => {
         let lang = localStorage.getItem("lang");
             getHome(lang?lang:"en")
             .then((res)=>{
-                console.log(res.data.data.slider)
+                console.log(res.data)
                 setSliderurl(res.data.slider_image_url)
                 setReviewurl(res.data.review_image_url)
+                setSoftwarewurl(res.data.software_image_url)
                 setSliders(res.data.data.slider)
                 setReviews(res.data.data.rivew)
+                setSoftware(res.data.data.software)
             })
             .catch((e)=>{
 
@@ -48,7 +52,7 @@ const Home = () => {
             <Services img_url={bottom_url} services={bottom}/>
             <Product/>
             <Industry/>
-            <Projects/>
+            {softwarewurl &&<Projects softwarewurl={softwarewurl} software={software}/>}
             {reviewurl && <Testimonoals reviewurl={reviewurl} reviews={reviews}/>}
             
         </div>
