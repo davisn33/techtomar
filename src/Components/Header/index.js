@@ -14,6 +14,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle'
 import search from "../../Assets/search.png"
 import triangle from "../../Assets/triangle.png"
+import {getServices} from "../../Services/api"
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -36,11 +37,15 @@ const Header = () => {
   const classes = useStyles();
   const [open,setOpen]=React.useState(false);
   const [pop,setPop]=React.useState(false);
+  const [inside,setInside]=React.useState(false);
   const [open1,setOpen1]=React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [lang,setLang]=React.useState("English");
   const [pos,setPos]=React.useState(0);
   const anchorRef = React.useRef(null);
+  const [list,setList]=React.useState([]);
+
+
   React.useEffect(()=>{
 
     document.addEventListener("scroll", e => {
@@ -51,6 +56,10 @@ const Header = () => {
         setPos(0)
       }
     })
+
+    getServices()
+    .then(res=>setList(res.data.data.top))
+    .catch(e=>console.log(e))
 
 
     let lang = localStorage.getItem("lang")
@@ -109,7 +118,7 @@ const Header = () => {
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup="true"
                     onMouseEnter={()=>setPop(true)}
-                    onMouseLeave={()=>setPop(false)}><NavLink to="/services" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>SERVICES</NavLink></div>
+                    onMouseLeave={()=>setTimeout(()=>!inside&&setPop(false),500)}><NavLink to="/services" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>SERVICES</NavLink></div>
                 <div><Link to="/product" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>PRODUCTS</Link></div>
                 <div><Link to="/career" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CAREER</Link></div>
                 <div><Link to="/contact" style={{textDecoration:"none",cursor:"pointer",color:pos?"black":"white"}}>CONTACT</Link></div>
@@ -118,35 +127,7 @@ const Header = () => {
             </div>
             
           </div>
-          <Popper open={pop} anchorEl={anchorRef.current} role={undefined} transition disablePortal >
-              {({ TransitionProps, placement }) => (
-                <Grow
-                  {...TransitionProps}
-                  style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'}}
-                >
-                  <Paper  onMouseEnter={()=>setPop(true)} onMouseLeave={()=>setPop(false)} style={{height:400}}> 
-                    <div style={{display:"flex",justifyContent:"center"}}>
-                      <Grid container style={{width:"50%"}}>
-                        <Grid item md={6} style={{display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
-                          {[1,2,2].map((item,i)=>
-                          <div>
-                            🞂{i}
-                          </div>
-                          )}
-                        </Grid>
-                        <Grid item ms={6} style={{display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
-                        {[1,2,2].map((item,i)=>
-                          <div>
-                            🞂{i}
-                          </div>
-                          )}
-                        </Grid>
-                      </Grid>
-                    </div>
-                  </Paper>
-                </Grow>
-              )}
-            </Popper>
+          
         </Hidden>
         <Hidden lgUp>
           <div>
@@ -204,6 +185,29 @@ const Header = () => {
         </ColorButton>
         </DialogActions>
       </Dialog>
+      {pop&&<div style={{position:"fixed",top:100,left:0,minHeight:300,width:"100%",background:"white",zIndex:999,display:"flex",flexDirection:"column",alignItems:"center"}} onMouseEnter={()=>setInside(true)} onMouseLeave={()=>{setInside(true);setPop(false)}}>
+          <div style={{width:"50%",padding:40,display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-evenly"}}>
+            <div>
+            {list.slice(0, 5).map(item=>
+            <div style={{fontSize:20,margin:5,textAlign:"left",cursor:"pointer"}}>
+              <Link to={`/service/${item.id}`} style={{textDecoration:"none",color:"black"}} onClick={()=>{setInside(true);setPop(false)}}>
+               ⏵ {item.title}
+               </Link>
+            </div>
+          )}
+            </div>
+            <div>
+            {list.length?list.slice(5,list.length-1).map(item=>
+            <div style={{fontSize:20,margin:5,textAlign:"left",cursor:"pointer"}}>
+              <Link to={`/service/${item.id}`} style={{textDecoration:"none",color:"black"}} onClick={()=>{setInside(true);setPop(false)}}>
+               ⏵ {item.title}
+               </Link>
+            </div>
+          ):null}
+            </div>
+          
+          </div>
+      </div>}
     </div>
   );
   

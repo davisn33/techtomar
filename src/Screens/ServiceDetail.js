@@ -21,7 +21,7 @@ const ServiceDetail = ({match}) => {
                 setDevelopment(res.data.development)
                 setDetails(res.data.detail)
           })
-    },[])
+    },[match.params.id])
     return (
         <div>
             <Service img_url={img_url} service={service} development={development} details={details}/>
